@@ -1,6 +1,6 @@
 //alert('Olá, seja bem vindo ao curso!')
 
-/*---------------------------------------------------------------------------------------*/ 
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
 
@@ -38,7 +38,7 @@ document.write('var b = ' + b)
 
 */
 
-/*---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
 
@@ -74,7 +74,7 @@ if (nota >= media && faltas < totalFaltas) {
 
 */
 
-/*---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
 
@@ -93,9 +93,13 @@ document.write('A soma deles são: ' + (num1 + num2))
 
 */
 
-/*---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
-/*var idade = prompt('Digite a sua idade:')
+/*
+
+Atividade 1 - A descrição está na pasta Atividades
+
+var idade = prompt('Digite a sua idade:')
 
 if (idade > 0 && idade < 15) {
     document.write('Criança')
@@ -109,7 +113,7 @@ if (idade > 0 && idade < 15) {
     document.write('Idade invalida')
 } */
 
-/*---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
 
@@ -145,7 +149,7 @@ switch(parseInt(opcao)) {
 
 */
 
-/*---------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*
 
@@ -233,5 +237,281 @@ Operadores aritméticos {
     }
 }
 
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*
+
+Atividade 2 - A descrição está na pasta Atividades
+
+var nome = prompt('Digite seu nome:')
+var alt = prompt('Digite sua altura em centimetros:')
+var peso = prompt('Digite seu peso')
+
+alt = parseFloat(alt)
+alt /= 100
+peso = parseFloat(peso)
+
+var imc = peso / (alt * alt)
+
+if (imc < 16) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como baixo peso muito grave')
+} else if (imc >= 16 && imc < 17) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como baixo peso grave')
+} else if (imc >= 17 && imc < 18.50) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como baixo peso')
+} else if (imc >= 18.50 && imc < 25) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como peso normal')
+} else if (imc >= 25 && imc < 30) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como sobrepeso')
+} else if (imc >= 30 && imc < 35) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como Obesidade grau 1')
+} else if (imc >= 35 && imc < 40) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como Obesidade grau 2')
+} else if (imc >= 40) {
+    document.write(nome + ' possui índice de massa corporal igual a ' + imc + ', sendo classificado como Obesidade grau 2')
+}
 
 */
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*
+
+    Funções
+
+    function nomeDaSuaFuncao (parametros) {
+        O que sua função fará
+
+        return nome-da-variavel-com-o-conteudo-que-deseja-retornar
+    }
+
+    EXEMPLO: Função para calcular a área de um terreno
+
+    function calcularAreaTerreno (largura, comprimento) {
+
+        var area = largura * comprimento
+
+        return area
+    }
+
+    var resultado = calcularAreaTerreno(15,25)
+    document.write(resultado)
+
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*
+
+    Funções anonimas
+
+    var exibirSaudacao = function (nome) {
+        document.write('Olá ' + nome + ', tudo bem?')
+    }
+
+    exibirSaudacao('Marcus')
+
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*
+
+    Funções callback
+
+    function exibirArtigo (id, callbackSucesso, callbackErro) {
+        //lógica: recuperar o id via requisição http
+        if (true) {
+            callbackSucesso ('Funções de callback em JS', 'Funções de callback são muito utilizadas ....')
+        } else {
+            callbackErro('Erro ao recuperar os dados')
+        }
+    }
+
+    var callbackSucesso = function(titulo, descricao) {
+        document.write('<h1>' + titulo + '</h1>')
+        document.write('<hr>')
+        document.write('<p>' + descricao + '</p>')
+    }
+
+    var callbackErro = function(erro) {
+        document.write('<p><b>Erro: </b>' + erro + '</p>')
+    }
+
+    exibirArtigo(1, callbackSucesso, callbackErro)
+
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*
+
+    // funções para manipular arquivos - podemos ver todos os método no site https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+    // string --> marcus vinIcius
+    // posição -> 01234567891011121314
+
+    var nome = 'marcus vinIcius'
+
+    // método length = contar a quantidade de caracteres
+    document.write(nome.length)
+
+    document.write('<br><hr>')
+
+    // método charAt(), recuperar o caracter em que estamos passando a posição, lembrando que a primeira letra da string está na posição 0
+    document.write(nome.charAt(4)) // retornará a letra u
+
+    document.write('<br><hr>')
+
+    // método indexOf(), retorna a primeira ocorrência da letra que passarmos por parametro
+    document.write(nome.indexOf('i')) // retornará a posição 8
+    document.write(nome.indexOf('I')) // retornará a posição 10
+    document.write(nome.indexOf('w')) // retornará a posição -1, pois, não exite essa letra na string
+
+    document.write('<br><hr>')
+
+    //método replace(), substituir uma determinada parte da string por outra
+    document.write(nome.replace('marcus', 'Marcus')) // retornará Marcus vinicius, o m maiusculo, já que qndo criei a variavel estava minuscula
+
+    document.write('<br><hr>')
+
+    //método substr(), indico a posição inicial e indico quantos caracteres quero pegar
+    document.write(nome.substr(7, 4)) // retornará vinI
+
+    document.write('<br><hr>')
+
+    //método toLowerCase(), converter todos os caracteres da string para minusculas
+    //método toUpperCase(), converter todos os caracteres da string para maiusculas
+    document.write(nome.toLowerCase() + '<br>')
+    document.write(nome.toUpperCase())
+
+    document.write('<br><hr>')
+
+    //método trim(), remove os espaços em branco das estremidades da string
+    document.write(nome.trim())
+
+    */
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*
+
+    // Funções para tarefas matemáticas - podemos ver todos os método no site https://www.w3schools.com/jsref/jsref_obj_math.asp
+
+    var x = 10.380
+    var y = 10.580
+
+    // método para arredondar para cima
+    document.write(Math.ceil(x))
+
+    document.write('<br><hr>')
+
+    // método para arredondar para baixo
+    document.write(Math.floor(x))
+
+    document.write('<br><hr>')
+
+    // método para arredondar conforme as casas decimais
+    document.write(Math.round(x) + '<br>')
+    document.write(Math.round(y))
+
+    document.write('<br><hr>')
+
+    // método que fornece um número aleatório entre 0 e 1
+    var z = Math.random()
+    document.write(z)
+
+    */
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+    //Funções para manipulação de datas - podemos ver todos os método no site https://www.w3schools.com/jsref/jsref_obj_date.asp
+
+    /*
+    
+    var data = new Date()
+
+    document.write(data.getDate() + '<br>') // retorna o dia
+    document.write((data.getMonth() + 1) + '<br>') // retorna o mês, considera os meses de 0 a 11
+    document.write(data.getFullYear() + '<br>') // retorna o ano
+
+    document.write('<br><hr>')
+
+    //adicionar ou remover dias da data, podemos fazer com meses e anos tbm, só temos que mudar para setMonth ou setFullYear
+    document.write(data.toString() + '<br>')
+    data.setDate(data.getDate() + 1)
+    document.write(data.toString() + '<br>')
+
+    document.write('<hr>')
+
+    // quantos dias existe entre as datas 13/01/2021 e 19/02/2021
+    var data1 = new Date(2021, 0, 15);
+    var data2 = new Date(2021, 1, 23);
+
+    var milissegundos_por_dia = (1*24*60*60*1000)
+    var milissegundos_entre_datas = Math.abs(data1.getTime() - data2.getTime())
+
+    document.write(data1.toString() + '<br>')
+    document.write(data2.toString() + '<br>')
+
+    // converter datas para algo que possamos calcular
+
+    document.write('<hr>')
+
+    document.write(data1.getTime() + '<br>')
+    document.write(data2.getTime() + '<br>')
+
+    document.write('<hr>')
+
+    // encontrar a quantidade milissegundos entre data1 e data2
+
+    document.write(Math.abs(data1.getTime() - data2.getTime()) + '<br>')
+    
+    // 1 dia tem 24 hrs, cada hora tem 60 minutos, cada minuto tem 60 segundos e cada segundo tem 1000 milissegundos
+    // quantos milissegundos tem um dia ?
+
+    document.write('1 dia tem: ' + (1*24*60*60*1000) + '<br>')
+
+    document.write('A diferença entre as datas é de ' + milissegundos_entre_datas/milissegundos_por_dia + ' dias')
+
+    */
+ 
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+    /*
+    
+    // Atividade 3 - A descrição está na pasta Atividades
+
+    var x = prompt('Digite o primeiro valor:')
+    var op = prompt('Digite a operação - soma ou subtração')
+    var y = prompt('Digite o segundo valor:')
+
+    x = parseInt(x)
+    y = parseInt(y)
+    
+    function soma (a, b, operacao) {
+        if (operacao == 'soma'){
+            document.write('O resultado é: ' + (a+b))
+        } else if (operacao == 'subtração'){
+            document.write('O resultado é: ' + (a-b))
+        }
+    }
+
+    soma(x, y, op)
+
+    */
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
