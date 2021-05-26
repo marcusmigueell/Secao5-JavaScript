@@ -502,3 +502,21 @@ if (imc < 16) {
     soma(x, y, op)
 
     */
+
+    /*
+
+        funções sem parametros
+
+        function soma() {
+            var resultado = 0
+            for(var i in arguments) {
+                resultado += arguments[i]
+            }
+            return resultado
+        }
+
+        console.log(soma(7, 5, 3.2, 0.8))
+
+        console.log(soma(7, 5, 3.2, 0.8, 'Texto'))
+    
+    */
