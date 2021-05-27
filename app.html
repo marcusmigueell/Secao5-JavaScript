@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <script src="js/meu_script.js"></script>
+
+</head>
+
+<body onresize="ajustaTamanhoPalcoJogo()">
+
+    <div class="painel">
+
+        <div class="vidas">
+            <img id="v1" src="Imagens/coracao_cheio.png">
+            <img id="v2" src="Imagens/coracao_cheio.png">
+            <img id="v3" src="Imagens/coracao_cheio.png">
+            <!-- ids criado para controlar os corações vazios e cheios que determinarão se o usário ganhou ou perdeu -->
+        </div>
+
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span> 
+            <!--dentro dessa tag apartir do DOM vai aparecer o cronometro linha 36 do meu_script.js-->
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById('cronometro').innerHTML = tempo  //tempo é o tempo de jogo que determinamos no meu_script.js
+        
+        var criaMosquito = setInterval(function(){
+            posicaoRandomica() //posições em que a mosca irá aparecer
+        }, criaMosquitoTempo) //criaMosquitoTempo é para ser o tempo que ela irá aparecer, criado no meu_script.js
+
+    </script> <!-- chamando a função que cria o objeto mosquito e deixe ele aleatório -->
+    
+</body>
+
+</html>
