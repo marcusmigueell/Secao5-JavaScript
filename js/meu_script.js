@@ -108,3 +108,191 @@
     console.log(cadeira)
 
 */
+
+/*
+
+    //Encapsulamento
+
+    class Tv {
+        constructor() {
+            this._relacaoCanais = Array(2, 4, 5, 7, 10)  // o underline (_) no começo significa que a variavel é privada
+            this._canalAtivo = 5
+            this._volume = 5
+        }
+
+        set relacaoCanais(novoCanal){
+            this._relacaoCanais = novoCanal
+        }
+
+        get relacaoCanais() {
+            return this._canalAtivo
+        }
+
+        set canalAtivo(canal){
+            let x = this._relacaoCanais.indexOf(canal)
+            if (x === -1) {
+                console.log('canal inexistente')
+            } else {
+                this._canalAtivo = canal
+            }
+            
+        }
+
+        get canalAtivo() {
+            return this._canalAtivo
+        }
+
+        set volume(valor){
+            this._volume = valor
+        }
+
+        get volume() {
+            return this._canalAtivo
+        }
+    }
+
+    let tv = new Tv()
+    tv.canalAtivo = 3
+    console.log(tv.canalAtivo)
+
+*/
+
+/*
+
+    //Herança
+
+    class Animal {
+        constructor(cor, tamanho){
+            this.cor = cor
+            this.tamanho = tamanho + ' cm'
+        }
+
+        dormir(){
+            console.log('Dormindo')
+        }
+    }
+
+
+    class Cachorro extends Animal {
+        constructor(){
+            super('Branco e Marrom', 30)
+            this.orelhas = 'Grandes e caídas'
+        }
+
+        correr(){
+            console.log('Correndo')
+        }
+
+        rosnar(){
+            console.log('Rosnando')
+        }
+    }
+
+
+    class Passaro extends Animal {
+        constructor(bico, cor, tamanho){
+            super(cor, tamanho)
+            this.bico = bico
+        }
+
+        voar(){
+            console.log('Voando')
+        }
+    }
+
+
+    class Papagaio extends Passaro {
+        constructor(sabeFalar, bico, cor, tamanho){
+            super(bico, cor, tamanho)
+            this.sabeFalar = sabeFalar
+        }
+
+        falar() {
+            console.log('Falando')
+        }
+    }
+
+
+    let cachorro = new Cachorro()
+    let passaro = new Passaro()
+    let papagaio = []
+    papagaio.push(new Papagaio(true, 'Médio', 'Verde e Amarelo', 25))
+    papagaio.push(new Papagaio(false, 'Curto', 'Azul', 30))
+    
+
+    //console.log(cachorro)
+    //console.log(passaro)
+    console.log(papagaio)
+
+    //cachorro.dormir()
+    //passaro.dormir()
+    //papagaio.falar()
+    //papagaio.dormir()
+    //papagaio.voar()
+
+*/
+
+/*
+
+    //Polimorfismo
+
+    class Animal {
+        constructor(cor, tamanho){
+            this.cor = cor
+            this.tamanho = tamanho + ' cm'
+        }
+
+        dormir(){
+            console.log('Dormindo')
+        }
+    }
+
+
+    class Passaro extends Animal {
+        constructor(bico, cor, tamanho){
+            super(cor, tamanho)
+            this.bico = bico
+        }
+
+        voar(){
+            console.log('Voando')
+        }
+    }
+
+
+    class Papagaio extends Passaro {
+        constructor(sabeFalar, bico, cor, tamanho){
+            super(bico, cor, tamanho)
+            this.sabeFalar = sabeFalar
+        }
+
+        falar() {
+            console.log('Falando')
+        }
+    }
+
+    class Avestruz extends Passaro {
+        constructor(bico, cor, tamanho) {
+            super(bico, cor, tamanho)
+        }
+
+        enterrarCabeça() {
+            console.log('Esconderijo')
+        }
+
+        voar(){ //aqui acontece o polimorfismo - sobrescrita de método
+            console.log('Não sabe voar')
+        }
+    }
+
+    let papagaio = new Papagaio(true, 'Médio', 'Verde e Amarelo', 25)
+
+    console.log(papagaio)
+    papagaio.voar()
+    
+    let avestruz = new Avestruz('Grande', 'Branco e Preto', 250)
+
+    console.log(avestruz)
+    avestruz.voar()
+
+*/
