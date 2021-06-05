@@ -7,8 +7,6 @@
             - encapsulamento.js
             - heranca.js
             - polimorfismo.js
-            - objetos_literais.js - esse não faz parte do O.O mas como estamos estudando classe resolvi colocar.
-            - funcao_construtora.js - idem o item anterior
 
     Para executar, basta colocar o respectivo nome no index.html no link <script>, exemplo:
             <script src="js/nome_do_arquivo.js"></script>
