@@ -30,46 +30,58 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="Imagens/logo.png" width="50" height="35" alt="Orçamento pessoal">
-      </a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5"> <!-- Inicio Navegação -->
+
+    <div class="container"> <!-- Inicio Container -->
+
+      <a class="navbar-brand" href="#"><img src="Imagens/logo.png" width="50" height="35" alt="Orçamento pessoal"></a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Inicio Cadastro e Consulta de despesas -->
+
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Cadastro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="consulta.html">Consulta</a>
-          </li>
+
+          <li class="nav-item active"><a class="nav-link" href="index.html">Cadastro</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="consulta.html">Consulta</a></li>
+
         </ul>
 
-      </div>
-    </div>
-  </nav>
+      </div> <!-- Fim Cadastro e Consulta de despesas -->
 
-  <div class="container">
-    <div class="row">
+    </div> <!-- Fim Container -->
+
+  </nav><!-- Fim Navegação -->
+
+  <div class="container"> <!-- Inicio Conteudo da página -->
+
+    <div class="row"> <!-- Inicio Título do conteudo -->
+
       <div class="col mb-5">
-        <h1 class="display-4">Registro de nova despesa</h1>
-      </div>
-    </div>
 
-    <div class="row mb-2">
-      <div class="col-md-2">
+        <h1 class="display-4">Registro de nova despesa</h1>
+
+      </div>
+
+    </div> <!-- Fim Título do conteudo -->
+
+    <div class="row mb-2"> <!-- Inicio da primeira linha da coleta dos dados -->
+
+      <div class="col-md-2"> <!-- Inicio da Coleta do ano da despesa -->
+
         <select class="form-control" id="ano">
           <option value="">Ano</option>
           <option value="2021">2021</option>
         </select>
-      </div>
 
-      <div class="col-md-2">
+      </div> <!-- Fim da Coleta do ano da despesa -->
+
+      <div class="col-md-2"> <!-- Inicio da Coleta do mês da despesa -->
+
         <select class="form-control" id="mes">
           <option value="">Mês</option>
           <option value="1">Janeiro</option>
@@ -85,13 +97,17 @@
           <option value="11">Novembro</option>
           <option value="12">Dezembro</option>
         </select>
-      </div>
 
-      <div class="col-md-2">
+      </div> <!-- Fim da Coleta do mês da despesa -->
+
+      <div class="col-md-2"> <!-- Inicio da Coleta do dia da despesa -->
+
         <input type="text" class="form-control" placeholder="Dia" id="dia" />
-      </div>
 
-      <div class="col-md-6">
+      </div> <!-- Fim da Coleta do dia da despesa -->
+
+      <div class="col-md-6"> <!-- Inicio da Coleta do tipo da despesa -->
+
         <select class="form-control" id="tipo">
           <option value="">Tipo</option>
           <option value="1">Alimentação</option>
@@ -100,25 +116,67 @@
           <option value="4">Saúde</option>
           <option value="5">Transporte</option>
         </select>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-8">
+      </div> <!-- Fim da Coleta do tipo da despesa -->
+
+    </div> <!-- Fim da primeira linha da coleta dos dados -->
+
+    <div class="row"> <!-- Inicio da segunda linha da coleta dos dados -->
+
+      <div class="col-md-8"> <!-- Inicio da Coleta da descrição da despesa -->
+
         <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
-      </div>
 
-      <div class="col-md-2">
+      </div> <!-- Fim da Coleta da descrição da despesa -->
+
+      <div class="col-md-2"> <!-- Inicio da Coleta do valor da despesa -->
+
         <input type="text" class="form-control" placeholder="Valor" id="valor" />
-      </div>
 
-      <div class="col-md-2 d-flex justify-content-end">
+      </div> <!-- Fim da Coleta do valor da despesa -->
+
+      <div class="col-md-2 d-flex justify-content-end"> <!-- Inicio do botão para coletar a despesa -->
+
         <button onclick="cadastrarDespesa()" type="button" class="btn btn-primary">
           <i class="fas fa-plus"></i>
         </button>
+
+      </div> <!-- Fim do botão para coletar a despesa -->
+
+    </div> <!-- Fim da segunda linha da coleta dos dados -->
+
+  </div> <!-- Fim Conteudo da página -->
+
+  <!-- Modal para mostrar o erro caso fique algum campo sem preenchimento e sucesso se foi cadastrado a despesa -->
+  <div class="modal fade" id="modalRegistroDespesas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true"> <!-- Inicio do Modal -->
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+
+        <div id="modal_titulo_cor"> <!-- Inicio Titulo do modal -->
+
+          <h5 class="modal-title" id="modal_titulo"></h5> 
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div> <!-- Fim do Titulo do modal -->
+
+        <div class="modal-body" id="modal_body"></div> <!-- Inicio e Fim do body do modal -->
+
+        <div class="modal-footer"> <!-- Inicio do botão do modal -->
+          <button type="button" id="modal_button" data-dismiss="modal"></button>
+        </div> <!-- Fim do botão do modal -->
+
       </div>
+
     </div>
-  </div>
+
+  </div> <!-- Fim do Modal -->
+
+  
 </body>
 
 </html>
