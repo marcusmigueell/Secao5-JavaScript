@@ -21,45 +21,56 @@
   <body onload="carregaListaDespesas()">
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-           <img src="Imagens/logo.png" width="50" height="35" alt="Orçamento pessoal">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5"> <!-- Inicio da navegação -->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="container"> <!-- Inicio do container -->
+
+        <a class="navbar-brand" href="#"> <!-- Imagem logo -->
+           <img src="Imagens/logo.png" width="50" height="35" alt="Orçamento pessoal">
+        </a> <!-- Imagem logo -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <!-- botão responsivo -->
+          <span class="navbar-toggler-icon"></span>
+        </button> <!-- botão responsivo -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- botões de cadastro e consulta da navegação -->
+
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Cadastro</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="consulta.html">Consulta</a>
-            </li>
+
+            <li class="nav-item"> <a class="nav-link" href="index.html">Cadastro</a> </li>
+            <li class="nav-item active"> <a class="nav-link" href="consulta.html">Consulta</a> </li>
+
           </ul>
           
-        </div>
-      </div>
-    </nav>
+        </div> <!-- botões de cadastro e consulta da navegação -->
 
-    <div class="container">
-      <div class="row mb-5">
+      </div> <!-- Fim do container -->
+
+    </nav> <!-- Fim da navegação -->
+
+    <div class="container"> <!-- Inicio do conteudo da página -->
+
+      <div class="row mb-5"> <!-- Inicio do titulo do conteudo -->
+
         <div class="col">
           <h1 class="display-4">Consulta de despesas</h1>
         </div>
-      </div>
 
-      <div class="row mb-2">
-        <div class="col-md-2">
+      </div> <!-- Fim do titulo do conteudo -->
+
+      <div class="row mb-2"> <!-- Inicio da primeira linha de coleta de dados -->
+
+        <div class="col-md-2"> <!-- Inicio da Coleta do ano da despesa -->
+
           <select class="form-control" id="ano">
             <option value="">Ano</option>
             <option value="2021">2021</option>
           </select>
-        </div>
 
-        <div class="col-md-2">
+        </div> <!-- Fim da Coleta do ano da despesa -->
+
+        <div class="col-md-2"> <!-- Inicio da Coleta do mês da despesa -->
+
           <select class="form-control" id="mes">
             <option value="">Mês</option>
             <option value="1">Janeiro</option>
@@ -75,43 +86,60 @@
             <option value="11">Novembro</option>
             <option value="12">Dezembro</option>
           </select>
-        </div>
-        
-        <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Dia" id="dia" />
-        </div>
 
-        <div class="col-md-6">
+        </div> <!-- Fim da Coleta do mês da despesa -->
+        
+        <div class="col-md-2"> <!-- Inicio da Coleta do dia da despesa -->
+
+          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+
+        </div> <!-- Inicio da Coleta do dia da despesa -->
+
+        <div class="col-md-6"> <!-- Inicio da Coleta do tipo da despesa -->
+
           <select class="form-control" id="tipo">
-            <option>Tipo</option>
+            <option value="">Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
             <option value="4">Saúde</option>
             <option value="5">Transporte</option>
           </select>
-        </div>
-      </div>
 
-      <div class="row  mb-5">
-        <div class="col-md-8">
+        </div> <!-- Inicio da Coleta do tipo da despesa -->
+
+      </div> <!-- Fim da primeira linha de coleta de dados -->
+
+      <div class="row  mb-5"> <!-- Inicio da segunda linha de coleta de dados -->
+
+        <div class="col-md-8"> <!-- Inicio da Coleta da descrição da despesa -->
+
           <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
-        </div>
 
-        <div class="col-md-2">
+        </div> <!-- Fim da Coleta da descrição da despesa -->
+
+        <div class="col-md-2"> <!-- Inicio da Coleta do valor da despesa -->
+
           <input type="text" class="form-control" placeholder="Valor" id="valor" />
-        </div>
 
-        <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+        </div> <!-- Fim da Coleta do valor da despesa -->
+
+        <div class="col-md-2 d-flex justify-content-end"> <!-- Inicio do botão para pesquisar a despesa -->
+
+          <button type="button" class="btn btn-primary" onclick="pesquisarDespesas()">
             <i class="fas fa-search"></i>
           </button>
-        </div>
-      </div>
 
-      <div class="row">
+        </div> <!-- Fim do botão para pesquisar a despesa -->
+
+      </div> <!-- Fim da segunda linha de coleta de dados -->
+
+      <div class="row"> <!-- Inicio da tabela resultante da pesquisa -->
+
         <div class="col">
+
           <table class="table" >
+
             <thead>
               <tr>
                 <th>Data</th>
@@ -122,12 +150,23 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody id="listaDespesas">
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
             </tbody>
+
           </table>
+
         </div>
-      </div>
-    </div>
+
+      </div> <!-- Fim da tabela resultante da pesquisa -->
+
+    </div> <!-- Fim do conteudo da página -->
+
   </body>	
 
 </html>
